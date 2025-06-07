@@ -4,121 +4,312 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>من نحن - NABZA CV</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
+        /* تعريف الألوان والمتغيرات لتسهيل التخصيص */
+        :root {
+            --primary-color: #0056B3; /* الأزرق الأساسي لموقعك */
+            --secondary-color: #004494; /* أزرق أغمق للـ hover وتفاصيل */
+            --accent-color: #ffffff; /* لون فاتح جداً للخلفيات المميزة */
+            --text-dark: #333;
+            --text-light: #555;
+            --border-light: #e0e0e0;
+            --shadow-light: 0 4px 15px rgba(0,0,0,0.08);
+            --shadow-hover: 0 8px 20px rgba(0,0,0,0.12);
+        }
+
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Cairo', sans-serif;
             direction: rtl;
             text-align: right;
-            line-height: 1.6;
-            color: #333;
+            line-height: 1.7;
+            color: var(--text-dark);
             margin: 0;
             padding: 0;
-            background-color: #fff;
+            background-color: var(--accent-color); /* خلفية الصفحة بلون فاتح جداً */
+            overflow-x: hidden; /* منع التجاوز الأفقي */
         }
 
-        /* تنسيقات الهيدر الجديد */
+        /* الهيدر - كما هو متفق عليه */
         .header {
-            background-color: #0056B3; /* لون الهيدر الأزرق */
+            background-color: var(--primary-color);
             color: #fff;
-            padding: 15px 20px; /* Padding افتراضي للهيدر */
+            padding: 15px 20px;
             display: flex;
-            justify-content: center; /* توسيط الشعار أفقيا */
-            align-items: center; /* توسيط الشعار عموديا */
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        .header .logo {
-            /* يمكنك التحكم في مسافة الشعار من هنا لو أردت */
-            /* margin-right: auto; margin-left: auto; */ /* لإعادة التوسيط */
-            /* padding: 5px 0; */ /* لو عايز تزود padding حول الشعار داخل الهيدر */
+            justify-content: center;
+            align-items: center;
+            box-shadow: var(--shadow-light);
+            position: sticky; /* لجعل الهيدر ثابت عند التمرير */
+            top: 0;
+            z-index: 1000; /* لضمان ظهوره فوق المحتوى */
         }
 
         .header .logo img {
-            height: 50px; /* ارتفاع الشعار (قيمة افتراضية، يمكنك تغييرها) */
-            width: auto; /* الحفاظ على نسبة العرض إلى الارتفاع */
-            display: block; /* للتأكد من المحاذاة الصحيحة */
-            /* يمكنك التحكم في حجم الشعار من هنا: */
-            /* height: 60px; */ /* مثلاً لو عايز الشعار أكبر */
-            /* width: 120px; */ /* أو تحدد عرض ثابت */
+            height: 50px; /* حجم الشعار - يمكن التحكم فيه */
+            width: auto;
+            display: block;
         }
-        /* نهاية تنسيقات الهيدر */
 
+        /* تنسيقات عامة للمحتوى */
         .container {
-            max-width: 800px;
-            margin: 100px auto 40px auto; /* زيادة ال margin-top عشان الهيدر بقى موجود */
-            padding: 30px;
+            max-width: 1000px; /* عرض أقصى أكبر للمحتوى ليعطي مظهرًا أكثر فخامة */
+            margin: 60px auto 60px auto; /* مسافات أكبر */
+            padding: 50px;
             background-color: #fff;
-            box-shadow: 0 0 15px rgba(0,0,0,0.05);
-            border-radius: 8px;
+            border-radius: 15px; /* حواف أكثر دائرية */
+            box-shadow: var(--shadow-light);
         }
 
         h1 {
-            color: #0056B3;
+            color: var(--primary-color);
             text-align: center;
-            margin-bottom: 40px;
-            font-size: 2.5em;
+            margin-bottom: 60px;
+            font-size: 3.5em; /* حجم أكبر جداً للعنوان الرئيسي */
+            font-weight: 800; /* سمك خط إضافي */
+            position: relative;
+            padding-bottom: 20px;
+        }
+
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 50%;
+            transform: translateX(50%);
+            width: 100px; /* خط أطول تحت العنوان */
+            height: 5px; /* سمك أكبر للخط */
+            background-color: var(--primary-color);
+            border-radius: 3px;
         }
 
         h2 {
-            color: #0056B3;
-            margin-top: 30px;
-            margin-bottom: 15px;
-            font-size: 1.8em;
-            border-bottom: 2px solid #eee;
-            padding-bottom: 10px;
+            color: var(--primary-color);
+            margin-top: 70px; /* مسافات أكبر بين الأقسام */
+            margin-bottom: 35px;
+            font-size: 2.5em; /* حجم أكبر للعناوين الفرعية */
+            font-weight: 700;
+            position: relative;
+            padding-right: 20px;
+        }
+
+        h2::before {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 8px; /* سمك أكبر للخط الجانبي */
+            height: 90%;
+            background-color: var(--primary-color);
+            border-radius: 4px;
         }
 
         p {
-            margin-bottom: 15px;
-            font-size: 1.1em;
+            margin-bottom: 25px;
+            font-size: 1.2em; /* حجم خط أكبر للفقرات */
+            line-height: 1.9; /* تباعد أسطر أكبر لسهولة القراءة */
+            color: var(--text-light);
         }
 
-        ul {
+        /* تنسيق أقسام المحتوى */
+        .content-section {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border-light);
+            margin-bottom: 40px;
+        }
+
+        .content-section:last-of-type {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        /* تصميم خاص للقوائم مع الأيقونات */
+        .icon-list {
             list-style: none;
             padding: 0;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px; /* مسافة أكبر بين العناصر */
         }
 
-        ul li {
-            position: relative;
-            padding-right: 25px;
-            margin-bottom: 10px;
-            font-size: 1.1em;
+        .icon-list li {
+            background-color: var(--accent-color); /* خلفية فاتحة للعنصر */
+            border: 1px solid var(--border-light);
+            border-radius: 10px;
+            padding: 25px;
+            font-size: 1.15em;
+            color: var(--text-dark);
+            box-shadow: 0 3px 10px rgba(0,0,0,0.06);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+            display: flex; /* لترتيب الأيقونة والنص */
+            align-items: flex-start; /* الأيقونة والنص يبدأون من الأعلى */
+            line-height: 1.6;
         }
 
-        ul li::before {
-            content: '•';
-            color: #0056B3;
-            font-size: 1.2em;
-            position: absolute;
-            right: 0;
-            top: 0;
+        .icon-list li:hover {
+            transform: translateY(-8px); /* حركة أكبر عند الـ hover */
+            box-shadow: var(--shadow-hover);
+            background-color: #f0f6fc; /* تغيير طفيف للخلفية عند الـ hover */
         }
 
-        /* تنسيق رابط الرجوع */
-        .back-link {
-            display: block;
-            width: fit-content;
-            margin: 50px auto 20px auto;
-            color: #0056B3;
+        .icon-list li .icon {
+            flex-shrink: 0; /* منع الأيقونة من الانكماش */
+            width: 35px; /* حجم الأيقونة */
+            height: 35px;
+            margin-left: 20px; /* مسافة بين الأيقونة والنص */
+            fill: var(--primary-color); /* لون الأيقونة */
+            transition: fill 0.3s ease;
+        }
+
+        .icon-list li:hover .icon {
+            fill: var(--secondary-color); /* تغيير لون الأيقونة عند الـ hover */
+        }
+
+        .icon-list li span {
+            flex-grow: 1; /* السماح للنص بأخذ المساحة المتبقية */
+            font-weight: 600; /* جعل النص بداخل القائمة أغمق قليلاً */
+        }
+
+        /* زر الرجوع للصفحة الرئيسية - بتصميم عصري ومميز */
+        .back-to-home {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 80px; /* مسافة أكبر من الأسفل */
+        }
+
+        .back-to-home a {
+            background-color: var(--primary-color);
+            color: #fff;
             text-decoration: none;
-            font-size: 1.2em;
-            font-weight: bold;
-            transition: color 0.3s ease;
+            padding: 18px 40px; /* حجم أكبر للزر */
+            border-radius: 35px; /* شكل دائري أكثر */
+            font-size: 1.3em; /* حجم خط أكبر للزر */
+            font-weight: 700;
+            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 8px 18px rgba(0, 86, 179, 0.4);
+            display: flex;
+            align-items: center;
         }
 
-        .back-link:hover {
-            color: #004494;
+        .back-to-home a:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-5px); /* حركة أكبر عند الـ hover */
+            box-shadow: 0 10px 22px rgba(0, 86, 179, 0.5);
         }
 
-        .back-link .arrow {
+        .back-to-home a .arrow {
             display: inline-block;
-            margin-left: 8px;
+            margin-right: 12px; /* مسافة أكبر */
             transform: rotate(180deg);
-            font-size: 1.3em;
+            font-size: 1.7em; /* حجم السهم */
             line-height: 1;
-            vertical-align: middle;
         }
+
+        /* تصميم للموبايل (Responsive Design) */
+        @media (max-width: 992px) {
+            .container {
+                max-width: 90%;
+                margin: 40px auto;
+                padding: 30px;
+            }
+            h1 {
+                font-size: 2.8em;
+                margin-bottom: 40px;
+            }
+            h2 {
+                font-size: 2em;
+                margin-top: 50px;
+                margin-bottom: 25px;
+            }
+            p {
+                font-size: 1.1em;
+            }
+            .icon-list li {
+                padding: 20px;
+            }
+            .icon-list li .icon {
+                width: 30px;
+                height: 30px;
+                margin-left: 15px;
+            }
+            .back-to-home a {
+                padding: 15px 30px;
+                font-size: 1.1em;
+            }
+            .back-to-home a .arrow {
+                font-size: 1.5em;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 25px;
+                border-radius: 10px;
+            }
+            h1 {
+                font-size: 2.2em;
+                margin-bottom: 30px;
+            }
+            h1::after {
+                width: 70px;
+                height: 3px;
+            }
+            h2 {
+                font-size: 1.8em;
+                margin-top: 40px;
+                margin-bottom: 20px;
+            }
+            h2::before {
+                width: 5px;
+                height: 80%;
+            }
+            p {
+                font-size: 1em;
+            }
+            .icon-list {
+                grid-template-columns: 1fr; /* عمود واحد على الشاشات الصغيرة */
+                gap: 15px;
+            }
+            .icon-list li {
+                padding: 15px;
+                font-size: 1em;
+            }
+            .icon-list li .icon {
+                width: 28px;
+                height: 28px;
+                margin-left: 12px;
+            }
+            .back-to-home a {
+                padding: 12px 25px;
+                font-size: 1em;
+            }
+            .back-to-home a .arrow {
+                font-size: 1.3em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header {
+                padding: 10px 15px;
+            }
+            .header .logo img {
+                height: 40px;
+            }
+            h1 {
+                font-size: 1.8em;
+                margin-bottom: 25px;
+            }
+            h2 {
+                font-size: 1.5em;
+                margin-top: 30px;
+            }
+            .container {
+                padding: 15px;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -127,50 +318,135 @@
         <a href="https://nabzacv.blogspot.com" class="logo">
             <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiTTLuMoi2SW4uOsW7ZP-FtViLmJro2vpvc1xuXXDe3hKR3WSRdNIKX89kvw318LRukveHMtpKdrI1PpiuwCN3lEykSwoscPPIVyb33uhy9iFr8NUYSP6xcuSV-UJN2bV6LARvzfquvdFj9CbQs9jNhk-U4qGiUjPFZsbwNJSk1x3wn6mlVxvKNPCWyaOo/s1600/5.png" alt="NABZA CV Logo">
         </a>
-        </header>
+    </header>
 
     <div class="container">
         <h1>من نحن</h1>
 
-        <p>مرحباً بك في NABZA CV، وجهتك الأولى لإنشاء السيرة الذاتية الاحترافية التي تعبّر عنك وتفتح لك أبواب الفرص. في عالم المنافسة الشديدة على الوظائف، نعلم جيداً أن انطباعك الأول أمام أصحاب العمل يبدأ من سيرتك الذاتية، ولذلك نحن هنا لنساعدك تصنع هذا الانطباع بأفضل شكل ممكن.</p>
+        <div class="content-section">
+            <p>مرحباً بك في NABZA CV، وجهتك الأولى لإنشاء السيرة الذاتية الاحترافية التي تعبّر عنك وتفتح لك أبواب الفرص. في عالم المنافسة الشديدة على الوظائف، نعلم جيداً أن انطباعك الأول أمام أصحاب العمل يبدأ من سيرتك الذاتية، ولذلك نحن هنا لنساعدك تصنع هذا الانطباع بأفضل شكل ممكن.</p>
 
-        <p>في NABZA CV، ليس هدفنا فقط تصميم سير ذاتية أنيقة، بل نسعى إلى تقديم تجربة متكاملة تسهّل عليك التعبير عن مهاراتك، خبراتك، وطموحاتك بطريقة متميزة واحترافية تجذب الانتباه.</p>
+            <p>في NABZA CV، ليس هدفنا فقط تصميم سير ذاتية أنيقة، بل نسعى إلى تقديم تجربة متكاملة تسهّل عليك التعبير عن مهاراتك، خبراتك، وطموحاتك بطريقة متميزة واحترافية تجذب الانتباه.</p>
+        </div>
 
-        <h2>نعمل بشغف لنقدم لك:</h2>
-        <ul>
-            <li>تصميمات حديثة ومتجددة تتناسب مع مختلف المجالات والمستويات المهنية</li>
-            <li>سهولة الاستخدام تتيح لك إدخال بياناتك بخطوات بسيطة وسريعة</li>
-            <li>خيارات تخصيص واسعة لتتناسب مع شخصيتك وأسلوبك الخاص</li>
-            <li>تنسيقات PDF عالية الجودة جاهزة للطباعة أو الإرسال مباشرة</li>
-        </ul>
+        <div class="content-section">
+            <h2>نعمل بشغف لنقدم لك:</h2>
+            <ul class="icon-list">
+                <li>
+                    <svg class="icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z" stroke="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M12 7V12L15 14" stroke="#0056B3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>تصميمات حديثة ومتجددة تتناسب مع مختلف المجالات والمستويات المهنية</span>
+                </li>
+                <li>
+                    <svg class="icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2Z" stroke="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M9 12L11 14L15 10" stroke="#0056B3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>سهولة الاستخدام تتيح لك إدخال بياناتك بخطوات بسيطة وسريعة</span>
+                </li>
+                <li>
+                    <svg class="icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 12C14.2091 12 16 10.2091 16 8C16 5.79086 14.2091 4 12 4C9.79086 4 8 5.79086 8 8C8 10.2091 9.79086 12 12 12Z" stroke="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M12 12C14.2091 12 16 13.7909 16 16C16 18.2091 14.2091 20 12 20C9.79086 20 8 18.2091 8 16C8 13.7909 9.79086 12 12 12Z" stroke="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M2 12H22" stroke="#0056B3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>خيارات تخصيص واسعة لتتناسب مع شخصيتك وأسلوبك الخاص</span>
+                </li>
+                <li>
+                    <svg class="icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 16V8M8 12H16" stroke="#0056B3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z" stroke="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>تنسيقات PDF عالية الجودة جاهزة للطباعة أو الإرسال مباشرة</span>
+                </li>
+            </ul>
+        </div>
 
-        <h2>رؤيتنا</h2>
-        <p>نطمح أن نكون منصة رائدة في مجال تصميم السير الذاتية في الوطن العربي، ونسعى إلى تمكين كل شاب وشابة من الحصول على أداة قوية تساعدهم على تحقيق أحلامهم المهنية. نؤمن بأن لكل شخص الحق في الظهور بأفضل صورة، ونسعى لتحقيق ذلك من خلال دمج البساطة مع الاحترافية في كل خدمة نقدمها.</p>
+        <div class="content-section">
+            <h2>رؤيتنا</h2>
+            <p>نطمح أن نكون منصة رائدة في مجال تصميم السير الذاتية في الوطن العربي، ونسعى إلى تمكين كل شاب وشابة من الحصول على أداة قوية تساعدهم على تحقيق أحلامهم المهنية. نؤمن بأن لكل شخص الحق في الظهور بأفضل صورة، ونسعى لتحقيق ذلك من خلال دمج البساطة مع الاحترافية في كل خدمة نقدمها.</p>
+        </div>
 
-        <h2>مهمتنا</h2>
-        <p>مهمتنا هي تسهيل عملية إنشاء السيرة الذاتية وتوفير حلول ذكية وعملية تلبي حاجات الباحثين عن عمل، الخريجين الجدد، والمهنيين الذين يريدون تجديد صورتهم المهنية. نحن نؤمن بقوة بأن السيرة الذاتية القوية هي بداية قصة نجاح جديدة.</p>
+        <div class="content-section">
+            <h2>مهمتنا</h2>
+            <p>مهمتنا هي تسهيل عملية إنشاء السيرة الذاتية وتوفير حلول ذكية وعملية تلبي حاجات الباحثين عن عمل، الخريجين الجدد، والمهنيين الذين يريدون تجديد صورتهم المهنية. نحن نؤمن بقوة بأن السيرة الذاتية القوية هي بداية قصة نجاح جديدة.</p>
+        </div>
 
-        <h2>قيمنا</h2>
-        <ul>
-            <li>الابتكار: نحرص على تقديم تصميمات عصرية تلائم متطلبات السوق الحديثة</li>
-            <li>الوضوح: نجعل كل خطوة في عملية بناء سيرتك الذاتية واضحة وبسيطة</li>
-            <li>الثقة: نحافظ على خصوصيتك ونضمن سرية بياناتك تماماً</li>
-            <li>التميز: نعمل بلا كلل على تحسين خدماتنا لتلبية توقعاتك وأكثر</li>
-        </ul>
+        <div class="content-section">
+            <h2>قيمنا</h2>
+            <ul class="icon-list">
+                <li>
+                    <svg class="icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2C8.68629 2 6 4.68629 6 8C6 11.3137 12 22 12 22C12 22 18 11.3137 18 8C18 4.68629 15.3137 2 12 2Z" stroke="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M12 8C12 9.10457 11.1046 10 10 10C8.89543 10 8 9.10457 8 8C8 6.89543 8.89543 6 10 6C11.1046 6 12 6.89543 12 8Z" stroke="#0056B3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>الابتكار: نحرص على تقديم تصميمات عصرية تلائم متطلبات السوق الحديثة</span>
+                </li>
+                <li>
+                    <svg class="icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M11 4H4C3.44772 4 3 4.44772 3 5V20C3 20.5523 3.44772 21 4 21H19C19.5523 21 20 20.5523 20 20V13M14 3L21 10M14 3L14 10L21 10" stroke="#0056B3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>الوضوح: نجعل كل خطوة في عملية بناء سيرتك الذاتية واضحة وبسيطة</span>
+                </li>
+                <li>
+                    <svg class="icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2Z" stroke="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M12 6V12L16 14" stroke="#0056B3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>الثقة: نحافظ على خصوصيتك ونضمن سرية بياناتك تماماً</span>
+                </li>
+                <li>
+                    <svg class="icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" stroke="#0056B3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>التميز: نعمل بلا كلل على تحسين خدماتنا لتلبية توقعاتك وأكثر</span>
+                </li>
+            </ul>
+        </div>
 
-        <h2>لماذا تختار NABZA CV؟</h2>
-        <ul>
-            <li>خبرتنا في المجال تضمن لك جودة عالية</li>
-            <li>دعم فني متواصل لمساعدتك في كل خطوة</li>
-            <li>أسعار تنافسية مع باقات تناسب كل الاحتياجات</li>
-            <li>نتائج ملموسة تظهر في فرص عمل أفضل وسرعة في التوظيف</li>
-        </ul>
+        <div class="content-section">
+            <h2>لماذا تختار NABZA CV؟</h2>
+            <ul class="icon-list">
+                <li>
+                    <svg class="icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18 10L12 2L6 10H18Z" stroke="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M12 22L18 14L6 14L12 22Z" stroke="#0056B3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>خبرتنا في المجال تضمن لك جودة عالية</span>
+                </li>
+                <li>
+                    <svg class="icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z" stroke="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M12 6V12L16 14" stroke="#0056B3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>دعم فني متواصل لمساعدتك في كل خطوة</span>
+                </li>
+                <li>
+                    <svg class="icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2Z" stroke="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M12 6V12L16 14" stroke="#0056B3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>أسعار تنافسية مع باقات تناسب كل الاحتياجات</span>
+                </li>
+                <li>
+                    <svg class="icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2Z" stroke="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M12 6V12L16 14" stroke="#0056B3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>نتائج ملموسة تظهر في فرص عمل أفضل وسرعة في التوظيف</span>
+                </li>
+            </ul>
+        </div>
 
-        <p>في NABZA CV، نعتبر نجاحك هو نجاحنا، ونؤمن بأنك تستحق الأفضل. تعال وابدأ معنا رحلة بناء مستقبلك المهني الآن.</p>
+        <p class="last-paragraph">في NABZA CV، نعتبر نجاحك هو نجاحنا، ونؤمن بأنك تستحق الأفضل. تعال وابدأ معنا رحلة بناء مستقبلك المهني الآن.</p>
 
-        <a href="https://nabzacv.blogspot.com" class="back-link">
-            الرجوع للصفحة الرئيسية <span class="arrow">&#x2190;</span>
-        </a>
+        <div class="back-to-home">
+            <a href="https://nabzacv.blogspot.com">
+                <span class="arrow">&#x2190;</span> الرجوع للصفحة الرئيسية
+            </a>
+        </div>
     </div>
 
 </body>

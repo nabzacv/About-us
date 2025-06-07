@@ -12,13 +12,40 @@
             line-height: 1.6;
             color: #333;
             margin: 0;
-            padding: 20px;
+            padding: 0;
             background-color: #fff;
         }
 
+        /* تنسيقات الهيدر الجديد */
+        .header {
+            background-color: #0056B3; /* لون الهيدر الأزرق */
+            color: #fff;
+            padding: 15px 20px; /* Padding افتراضي للهيدر */
+            display: flex;
+            justify-content: center; /* توسيط الشعار أفقيا */
+            align-items: center; /* توسيط الشعار عموديا */
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header .logo {
+            /* يمكنك التحكم في مسافة الشعار من هنا لو أردت */
+            /* margin-right: auto; margin-left: auto; */ /* لإعادة التوسيط */
+            /* padding: 5px 0; */ /* لو عايز تزود padding حول الشعار داخل الهيدر */
+        }
+
+        .header .logo img {
+            height: 50px; /* ارتفاع الشعار (قيمة افتراضية، يمكنك تغييرها) */
+            width: auto; /* الحفاظ على نسبة العرض إلى الارتفاع */
+            display: block; /* للتأكد من المحاذاة الصحيحة */
+            /* يمكنك التحكم في حجم الشعار من هنا: */
+            /* height: 60px; */ /* مثلاً لو عايز الشعار أكبر */
+            /* width: 120px; */ /* أو تحدد عرض ثابت */
+        }
+        /* نهاية تنسيقات الهيدر */
+
         .container {
             max-width: 800px;
-            margin: 40px auto;
+            margin: 100px auto 40px auto; /* زيادة ال margin-top عشان الهيدر بقى موجود */
             padding: 30px;
             background-color: #fff;
             box-shadow: 0 0 15px rgba(0,0,0,0.05);
@@ -68,36 +95,39 @@
             top: 0;
         }
 
-        /* تنسيق رابط الرجوع الجديد */
+        /* تنسيق رابط الرجوع */
         .back-link {
-            display: block; /* عشان ياخد سطر لوحده ونتحكم في توسيطه */
-            width: fit-content; /* عرضه يكون على قد الكلام */
-            margin: 50px auto 20px auto; /* توسيط العنصر */
-            color: #0056B3; /* اللون الأزرق اللي طلبته */
-            text-decoration: none; /* إزالة الخط اللي تحت اللينك */
-            font-size: 1.2em; /* حجم الخط */
-            font-weight: bold; /* خط سميك */
-            transition: color 0.3s ease; /* تأثير ناعم عند المرور بالماوس */
-            /* الظل ممكن نعمله على النص نفسه لو حبيت، أو نكتفي باللون */
-            /* text-shadow: 1px 1px 2px rgba(0, 86, 179, 0.2); */ /* مثال لظل خفيف على النص */
+            display: block;
+            width: fit-content;
+            margin: 50px auto 20px auto;
+            color: #0056B3;
+            text-decoration: none;
+            font-size: 1.2em;
+            font-weight: bold;
+            transition: color 0.3s ease;
         }
 
         .back-link:hover {
-            color: #004494; /* لون أزرق أغمق شوية لما الماوس يمر عليه */
+            color: #004494;
         }
 
         .back-link .arrow {
-            /* سهم صغير لليسار */
-            display: inline-block; /* عشان يبقى جنب النص */
-            margin-left: 8px; /* مسافة بين النص والسهم */
-            transform: rotate(180deg); /* تدوير السهم عشان يشاور لليسار */
-            font-size: 1.3em; /* حجم السهم */
-            line-height: 1; /* ضبط محاذاة السهم مع النص */
-            vertical-align: middle; /* محاذاة عمودية */
+            display: inline-block;
+            margin-left: 8px;
+            transform: rotate(180deg);
+            font-size: 1.3em;
+            line-height: 1;
+            vertical-align: middle;
         }
     </style>
 </head>
 <body>
+
+    <header class="header">
+        <a href="https://nabzacv.blogspot.com" class="logo">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiTTLuMoi2SW4uOsW7ZP-FtViLmJro2vpvc1xuXXDe3hKR3WSRdNIKX89kvw318LRukveHMtpKdrI1PpiuwCN3lEykSwoscPPIVyb33uhy9iFr8NUYSP6xcuSV-UJN2bV6LARvzfquvdFj9CbQs9jNhk-U4qGiUjPFZsbwNJSk1x3wn6mlVxvKNPCWyaOo/s1600/5.png" alt="NABZA CV Logo">
+        </a>
+        </header>
 
     <div class="container">
         <h1>من نحن</h1>
